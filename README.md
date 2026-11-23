@@ -24,4 +24,11 @@ RPM lands in `RPMS/`.
 - On a device: `REDDFISH_SELFTEST="url url comments ..." QT_LOGGING_TO_CONSOLE=1 harbour-reddfish`
   opens the pages 15 s apart and logs what it reads.
 
-License: GPLv3
+## License
+Copyright (C) 2026 Roterfux
+
+This program is free software: you can redistribute it and/or modify it under the terms of
+the GNU General Public License as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version. See [LICENSE](LICENSE).
+
+SPDX-License-Identifier: GPL-3.0-or-later

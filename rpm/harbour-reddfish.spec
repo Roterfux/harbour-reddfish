@@ -2,7 +2,7 @@ Name:       harbour-reddfish
 Summary:    Reddit client for Sailfish OS
 Version:    0.15.0
 Release:    1
-License:    GPLv3
+License:    GPL-3.0-or-later
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   sailfish-components-webview-qt5
