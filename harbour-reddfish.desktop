@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.1
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-reddfish
+Exec=harbour-reddfish
+Name=Reddfish
+Comment=Reddit client
+
+[X-Sailjail]
+Permissions=Internet;WebView;Audio;Downloads;Pictures;Videos
+OrganizationName=org.reddfish
+ApplicationName=harbour-reddfish

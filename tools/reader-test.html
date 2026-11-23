@@ -1,0 +1,207 @@
+<!doctype html>
+<!-- Desktop check of qml/js/reader.js against a hand-made copy of old.reddit markup.
+     Serve harbour-reddfish/ and open tools/reader-test.html; results go to #out and window.result. -->
+<html><head><meta charset="utf-8"><title>reader test</title></head>
+<body class="listing-page loggedin">
+<div id="header-bottom-right"><span class="user"><a href="/user/tester/">tester</a></span></div>
+<div id="sr-header-area"><div class="dropdown srdrop"><span class="selected">my subreddits</span></div>
+  <div class="drop-choices srdrop">
+    <a class="choice" href="https://old.reddit.com/r/linux/">linux</a>
+    <a class="choice" href="https://old.reddit.com/r/SailfishOS/">SailfishOS</a>
+    <a class="bottom-option choice" href="https://old.reddit.com/subreddits/">edit subscriptions</a>
+  </div></div>
+<div class="side"><span class="fancy-toggle-button subscribe-button toggle">
+  <a class="option active add login-required" href="#">join</a><a class="option remove" href="#">leave</a></span></div>
+
+<div id="feed">
+<span class="pagename redditname"><a href="/r/sailfishos/">sailfishos</a></span>
+<div id="siteTable" class="sitetable linklisting">
+  <div class="thing id-t3_aaa link self stickied" id="thing_t3_aaa" data-fullname="t3_aaa"
+       data-subreddit="sailfishos" data-author="alice" data-score="42" data-comments-count="7"
+       data-timestamp="1763700000000" data-domain="self.sailfishos" data-nsfw="false"
+       data-url="/r/sailfishos/comments/aaa/hello/" data-permalink="/r/sailfishos/comments/aaa/hello/">
+    <div class="midcol likes"><div class="arrow upmod" data-event-action="upvote"></div><div class="arrow down" data-event-action="downvote"></div></div>
+    <div class="entry"><p class="title"><a class="title" href="/r/sailfishos/comments/aaa/hello/">Hello Sailfish</a>
+      <span class="linkflairlabel">News</span></p></div>
+  </div>
+  <div class="thing id-t3_bbb link promoted" id="thing_t3_bbb" data-fullname="t3_bbb"><a class="title">Ad</a></div>
+  <div class="thing id-t3_ccc link" id="thing_t3_ccc" data-fullname="t3_ccc" data-subreddit="sailfishos"
+       data-author="bob" data-score="5" data-comments-count="0" data-timestamp="1763600000000"
+       data-domain="i.redd.it" data-nsfw="false" data-url="https://i.redd.it/x.jpg"
+       data-permalink="/r/sailfishos/comments/ccc/pic/">
+    <div class="midcol unvoted"></div>
+    <a class="thumbnail" href="#"><img src="//b.thumbs.redditmedia.com/t.jpg"></a>
+    <div class="entry"><p class="title"><a class="title" href="#">A picture</a></p></div>
+  </div>
+  <div class="thing id-t3_ddd link" id="thing_t3_ddd" data-fullname="t3_ddd" data-subreddit="sailfishos"
+       data-author="eve" data-score="9" data-comments-count="2" data-timestamp="1763600000000"
+       data-domain="v.redd.it" data-url="https://v.redd.it/abc" data-permalink="/r/sailfishos/comments/ddd/vid/">
+    <div class="midcol unvoted"></div>
+    <div class="entry"><p class="title"><a class="title" href="#">A video</a></p>
+      <div class="expando-button video collapsed"></div>
+      <div class="expando" data-cachedhtml='<div class="media-preview"><div class="reddit-video-player-root" data-orientation="portrait" data-hls-url="https://v.redd.it/abc/HLSPlaylist.m3u8?a=1&amp;v=1"></div><video poster="https://external-preview.redd.it/v.png?width=640&amp;s=1"></video></div>'></div></div>
+  </div>
+  <div class="thing id-t3_eee link" id="thing_t3_eee" data-fullname="t3_eee" data-subreddit="sailfishos"
+       data-author="fay" data-score="1" data-comments-count="0" data-timestamp="1763600000000"
+       data-domain="reddit.com" data-url="https://www.reddit.com/gallery/eee" data-permalink="/r/sailfishos/comments/eee/g/">
+    <div class="midcol unvoted"></div>
+    <div class="entry"><p class="title"><a class="title" href="#">A gallery</a></p>
+      <div class="expando"><div class="media-gallery"><img class="preview" src="https://preview.redd.it/g1.jpg?width=640&amp;s=2" width="614" height="768"><a href="https://preview.redd.it/g1.jpg?width=1080&amp;s=9"></a><img class="preview" src="https://preview.redd.it/g2-x_Y.png?width=640&amp;s=3"></div></div></div>
+  </div>
+  <div class="nav-buttons"><span class="next-button"><a href="/tools/reader-test-page2.html?count=25&amp;after=t3_ccc">next</a></span></div>
+</div>
+</div>
+
+<template id="postpage">
+<div id="siteTable" class="sitetable linklisting"><div id="pinnable-placeholder-aaa" class="pinnable-placeholder"><div id="pinnable-content-aaa" class="pinnable-content">
+  <div class="thing id-t3_aaa link self" id="thing_t3_aaa" data-fullname="t3_aaa" data-subreddit="sailfishos"
+       data-author="alice" data-score="42" data-comments-count="3" data-timestamp="1763700000000"
+       data-domain="self.sailfishos" data-url="/r/sailfishos/comments/aaa/hello/"
+       data-permalink="/r/sailfishos/comments/aaa/hello/">
+    <div class="midcol unvoted"></div>
+    <div class="entry"><a class="title">Hello Sailfish</a>
+      <div class="expando"><div class="usertext-body"><div class="md"><p>Self <b>text</b></p></div></div></div></div>
+  </div>
+</div></div></div>
+<div class="commentarea"><div class="sitetable nestedlisting">
+  <div class="thing id-t1_c1 comment" id="thing_t1_c1" data-fullname="t1_c1" data-author="carol">
+    <div class="midcol likes"></div>
+    <div class="entry"><p class="tagline"><a class="author submitter">carol</a>
+      <span class="score unvoted" title="12">12 points</span><time datetime="2026-11-21T10:00:00+00:00">1h</time></p>
+      <div class="usertext-body"><div class="md"><p>Top comment</p></div></div></div>
+    <div class="child"><div class="sitetable listing">
+      <div class="thing id-t1_c2 comment" id="thing_t1_c2" data-fullname="t1_c2" data-author="dave">
+        <div class="midcol unvoted"></div>
+        <div class="entry"><p class="tagline"><a class="author">dave</a>
+          <span class="score unvoted" title="3">3 points</span><time datetime="2026-11-21T11:00:00+00:00">1h</time></p>
+          <div class="usertext-body"><div class="md"><p>Reply</p></div></div></div>
+        <div class="child"></div>
+      </div>
+      <div class="thing id-t1_m1 morechildren" id="more_t1_m1"><span class="morecomments"><a href="javascript:void(0)">load more comments (4 replies)</a></span></div>
+    </div></div>
+  </div>
+  <div class="thing id-t1_c3 comment deleted" id="thing_t1_c3">
+    <div class="entry"><p class="tagline"><time datetime="2026-11-21T09:00:00+00:00">2h</time></p></div>
+    <div class="child"></div>
+  </div>
+  <div class="thing morerecursion" id="more_t1_r1"><a href="https://old.reddit.com/r/sailfishos/comments/aaa/hello/r1/">continue this thread</a></div>
+</div></div>
+</template>
+
+<pre id="out"></pre>
+<script>
+(async function () {
+  const src = (await (await fetch("../qml/js/reader.js")).text())
+    .replace(/^\.pragma library$/m, "");
+  const R = {};
+  new Function("R", src + "\nR.script = script; R.clickScript = clickScript; R.isImage = isImage; R.subscribeScript = subscribeScript; R.loginScript = loginScript; R.moreScript = moreScript; R.expandScript = expandScript; R.readThingScript = readThingScript; R.moreStatusScript = moreStatusScript;")(R);
+  const run = () => JSON.parse(new Function(R.script)());
+  const ok = [], bad = [];
+  const check = (name, cond) => (cond ? ok : bad).push(name);
+
+  const feed = run();
+  check("feed page", feed.page === "feed");
+  check("logged in + user", feed.loggedIn && feed.user === "tester");
+  check("title", feed.title === "r/sailfishos");
+  check("4 posts, ad skipped", feed.posts.length === 4);
+  const [, pic, vid, gal] = feed.posts;
+  check("no preview on plain image", pic.preview === "" && !pic.isVideo && !pic.isGallery);
+  check("video poster preview", vid.isVideo && vid.preview === "https://external-preview.redd.it/v.png?width=640&s=1");
+  check("video hls url", vid.hls === "https://v.redd.it/abc/HLSPlaylist.m3u8?a=1&v=1" && pic.hls === "");
+
+  // Media left out of the listing: tap the expand button, read again, fold back.
+  check("hasExpando only on non-self with button", vid.hasExpando && !feed.posts[0].hasExpando && !pic.hasExpando);
+  const lazy = document.createElement("div");
+  lazy.innerHTML = '<div class="thing link" id="thing_t3_lazy" data-fullname="t3_lazy" data-domain="i.imgur.com" data-url="https://imgur.com/x">'
+    + '<div class="entry"><a class="title">Lazy</a><div class="expando-button collapsed video"></div><div class="expando"></div></div></div>';
+  const lazyEl = lazy.firstChild;
+  document.body.appendChild(lazyEl);
+  const btn = lazyEl.querySelector(".expando-button");
+  btn.onclick = () => {
+    if (btn.classList.contains("collapsed")) {
+      btn.classList.replace("collapsed", "expanded");
+      lazyEl.querySelector(".expando").innerHTML = '<img class="preview" src="https://preview.redd.it/lazy.jpg?w=640&amp;s=3">';
+    } else {
+      btn.classList.replace("expanded", "collapsed");
+      lazyEl.querySelector(".expando").innerHTML = "";
+    }
+  };
+  check("expand clicks button", new Function(R.expandScript("thing_t3_lazy"))() === true && btn.classList.contains("expanded"));
+  const lp = JSON.parse(new Function(R.readThingScript("thing_t3_lazy"))());
+  check("read expanded media + fold back", lp.preview === "https://preview.redd.it/lazy.jpg?w=640&s=3"
+        && btn.classList.contains("collapsed"));
+  check("expand twice is no-op once folded? (button collapsed again)", new Function(R.expandScript("bad id"))() === false);
+  lazyEl.remove();
+
+  // Infinite scroll: append page 2 into this DOM, then re-read.
+  check("more started", new Function(R.moreScript)() === "started");
+  for (let i = 0; i < 50 && window.__rfMore === "busy"; i++) await new Promise(r => setTimeout(r, 50));
+  check("more done", new Function(R.moreStatusScript)() === "done");
+  const all = run();
+  check("appended posts (repeat kept for QML dedupe)", all.posts.length === 6
+        && all.posts[5].name === "t3_fff" && all.posts[4].name === "t3_ccc");
+  check("no next after last page", all.next === "" && new Function(R.moreScript)() === "end");
+  let up2 = false;
+  document.querySelector('#siteTable > #thing_t3_fff [data-event-action="upvote"]').onclick = () => up2 = true;
+  check("vote on appended post", new Function(R.clickScript("thing_t3_fff", "up"))() === true && up2);
+  check("gallery preview", gal.isGallery && gal.preview === "https://preview.redd.it/g1.jpg?width=640&s=2");
+  check("box ratio: preview size, video orientation, unknown", Math.abs(gal.ratio - 768 / 614) < 1e-9
+        && Math.abs(vid.ratio - 16 / 9) < 1e-9 && pic.ratio === 0);
+  check("redgifs id only where linked", feed.posts.every(p => p.redgifs === ""));
+  check("gallery all pictures, deduped", gal.gallery === "https://i.redd.it/g1.jpg|https://i.redd.it/g2-x_Y.png"
+        && pic.gallery === "");
+  check("self url absolute", feed.posts[0].url === location.origin + "/r/sailfishos/comments/aaa/hello/");
+  check("likes from midcol", feed.posts[0].likes === 1 && feed.posts[1].likes === 0);
+  check("stickied/flair/score", feed.posts[0].stickied && feed.posts[0].flair === "News" && feed.posts[0].score === 42);
+  check("thumb https", feed.posts[1].thumb === "https://b.thumbs.redditmedia.com/t.jpg");
+  check("image detect", R.isImage(feed.posts[1]) && !R.isImage(feed.posts[0]));
+  check("next link", feed.next.indexOf("after=t3_ccc") > 0);
+  check("subscribe state", feed.canSubscribe && !feed.subscribed);
+  check("subscriptions", JSON.stringify(feed.subs) === '["linux","SailfishOS"]');
+  let joined = false;
+  document.querySelector(".side .option.add").onclick = () => joined = true;
+  check("click join", new Function(R.subscribeScript)() === true && joined);
+  document.querySelector(".side .option.add").classList.remove("active");
+  document.querySelector(".side .option.remove").classList.add("active");
+  check("subscribed state", run().subscribed);
+
+  // click script: upvote arrow on thing_t3_aaa
+  let clicked = "";
+  document.querySelector('#thing_t3_aaa [data-event-action="upvote"]').onclick = () => clicked = "up";
+  check("click up", new Function(R.clickScript("thing_t3_aaa", "up"))() === true && clicked === "up");
+  check("click bad id", new Function(R.clickScript('x");alert(1);("', "up"))() === false);
+
+  document.getElementById("feed").innerHTML = document.getElementById("postpage").innerHTML;
+  const post = run();
+  check("post page", post.page === "post");
+  check("selftext", post.post.selftext.indexOf("<b>text</b>") >= 0);
+  check("5 comment rows", post.comments.length === 5);
+  const [c1, c2, m1, c3, r1] = post.comments;
+  check("c1", c1.author === "carol" && c1.score === 12 && c1.depth === 0 && c1.submitter && c1.likes === 1);
+  check("c2 nested", c2.author === "dave" && c2.depth === 1 && !c2.submitter);
+  check("more", m1.isMore && m1.depth === 1 && m1.id === "more_t1_m1" && m1.href === "");
+  check("deleted", c3.author === "[deleted]" && c3.scoreHidden);
+  check("morerecursion", r1.isMore && r1.href.indexOf("/r1/") > 0);
+  check("time", c1.time === Date.parse("2026-11-21T10:00:00+00:00"));
+
+  // Login page: detection, then the fill+submit script with awkward characters.
+  document.body.classList.remove("loggedin");
+  document.getElementById("feed").innerHTML =
+    '<form id="login-form"><input name="user"><input name="passwd" type="password">' +
+    '<input name="rem" type="checkbox"><button type="submit">log in</button></form>';
+  check("login page", run().page === "login");
+  let sent = null;
+  document.getElementById("login-form").onsubmit = (ev) => {
+    ev.preventDefault();
+    const f = ev.target;
+    sent = [f.user.value, f.passwd.value, f.rem.checked];
+  };
+  const pw = 'p"a\'ss\\w<\/script> d';
+  check("login script fills + submits", new Function(R.loginScript("tester", pw))() === true
+        && sent && sent[0] === "tester" && sent[1] === pw && sent[2] === true);
+
+  window.result = { ok, bad };
+  document.getElementById("out").textContent = "PASS " + ok.length + "\nFAIL " + bad.join(", ");
+})().catch(e => { window.result = { error: String(e) }; document.getElementById("out").textContent = "ERROR " + e; });
+</script>
+</body></html>

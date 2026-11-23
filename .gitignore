@@ -1,0 +1,6 @@
+RPMS/
+*.o
+moc_*
+Makefile
+/harbour-reddfish
+*.user
